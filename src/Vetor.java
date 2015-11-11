@@ -21,6 +21,12 @@ public class Vetor {
 		return Vetor.length;
 	}
 	
+	public void print(){
+		for(int i = 0; i < Vetor.length; i++){
+			System.out.println(Vetor[i]);
+		}
+	}
+	
 	public void put(int posicao, int valor) throws VetorIndexOutOfBoundsException{
 		if(posicao >= 0 && posicao < Vetor.length){
 			Vetor[posicao] = valor;
@@ -47,7 +53,7 @@ public class Vetor {
 		}
 	}
 	
-	public void sort{
+	public void sort(){
 		 int i;
        		int aux;
 		 // bubble sort
@@ -63,50 +69,51 @@ public class Vetor {
 	}
 	public void intersecao(Vetor v2) throws VetorIndexOutOfBoundsException, VetorNullPointerException{
 
-        this.sort();
-        v2.sort();
+        	this.sort();
+        	v2.sort();
 
-        int cont1 = 0;
-        int cont2 = 0;
-        int posicao = 0;
-        int vet1 = 0;
+        	int cont1 = 0;
+        	int cont2 = 0;
+        	int posicao = 0;
+		int vet1 = 0;
 
-        int tamanhoMenor = (this.size() < v2.size()) ? this.size() : v2.size();
-        Vetor v3 = new Vetor(tamanhoMenor);
+        	int tamanhoMenor = (this.size() < v2.size()) ? this.size() : v2.size();
+        	Vetor v3 = new Vetor(tamanhoMenor);
 
-        for (int i = 0; i <= this.vetor.length; i++) {
-                if(i > 0) {
-                        if (i != this.vetor.length && this.vetor[i] == vet1) {
-                                cont1++;
-                                continue;
-                        } else {
-                                int qtd = cont1;
-                                if(cont1 > cont2) {
-                                        qtd = cont2;
-                                }
+        	for (int i = 0; i <= this.vetor.length; i++) {
+                	if(i > 0) {
+                		if (i != this.vetor.length && this.vetor[i] == vet1) {
+                                	cont1++;
+                                	continue;
+                        	} else {
+                                	int qtd = cont1;
+                                	if(cont1 > cont2) {
+                                        	qtd = cont2;
+                                	}
 
-                                for(int k = 0; k < qtd; k++) {
-                                        v3.put(posicao, vet1);
-                                        posicao++;
-                                }
+                                	for(int k = 0; k < qtd; k++) {
+                                	        v3.put(posicao, vet1);
+                                	        posicao++;
+                                	}
 
-                                if(i == this.vetor.length) {
-                                        break;
-                                }
-                        }
-                }
-                        cont1 = 1;
-                        cont2 = 0;
-                        vet1 = this.vetor[i];
+                                	if(i == this.vetor.length) {
+                                	        break;
+                                	}
+                        	}
+                	}
+                        	cont1 = 1;
+                        	cont2 = 0;
+                        	vet1 = this.vetor[i];
 
-                        for(int j = 0; j < v2.vetor.length; j++) {
-                                if(v2.vetor[j] == this.vetor[i]) {
-                                        cont2++;
-                                }
-                        }
-        }
+                        	for(int j = 0; j < v2.vetor.length; j++) {
+                                	if(v2.vetor[j] == this.vetor[i]) {
+                                	        cont2++;
+                                	}
+                        	}
+        	}
 
-                for( int i = 0; i < posicao; i++ )
+                for( int i = 0; i < posicao; i++ ){
                         System.out.println("posicao " + i + " - " + v3.vetor[i]);
-    }
+               	}
+	}
 }
